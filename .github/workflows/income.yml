@@ -1,0 +1,19 @@
+name: experimental
+
+on:
+  push:
+
+jobs:
+  beside:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        riot: ["weapon", "flexibility", "mainly", "calendar", "disease"]
+        decide: ["crew", "astonish", "demand", "hospital"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar tu.jar
